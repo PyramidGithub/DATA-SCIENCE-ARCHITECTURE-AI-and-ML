@@ -2,6 +2,9 @@
 Contains the DATA SCIENCE, ARCHITECTURE, AI - series  & some snippets to solve various issues 
 
 ***  Help to fix   font family not found in Windows font database. You are recieving the below error or warning.   ***
+Must be done for regular & prject env. then registered with R for your device 
+
+***  To fix problemslike below
 
 Fix 
 > warnings()
@@ -16,6 +19,7 @@ Warning messages:
 
 
 ***********************************************************************************************************************
+Fix for regular env
 ***********************************************************************************************************************
 # Env. SetUp
 # install.packages("ggthemes",repos = "http://cran.us.r-project.org")
@@ -1061,8 +1065,10 @@ Warning messages:
                                                                                                                                                                                                                                                                                                                [199] "Urdu Typesetting"                "Verdana"                         "Viner Hand ITC"                  "Vivaldi"                         "Vladimir Script"                 "Webdings"
                                                                                                                                                                                                                                                                                                                [205] "Wingdings"                       "Wingdings 2"                     "Wingdings 3"
                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                          # Load to Project(RENV)                     
-                                                                                                                                                                                                                                                                                          > extrafont::loadfonts(device = "win")
+***********************************************************************************************************************
+Fix for project env
+***********************************************************************************************************************                                                                                                                                                                                                                                                                                                
+# Import Fonts to Proj ENV. i.e.  RENV                                                                                                                                                                                                                                                                                          
 > library(extrafont)
 Registering fonts with R
 > font_import()
@@ -1524,3 +1530,281 @@ Found FontName for 351 fonts.
 Scanning afm files in C:/Users/Administrator/AppData/Local/R/cache/R/renv/cache/v5/windows/R-4.4/x86_64-w64-mingw32/extrafontdb/1.0/a861555ddec7451c653b40e713166c6f/extrafontdb/metrics
 Writing font table in C:/Users/Administrator/AppData/Local/R/cache/R/renv/cache/v5/windows/R-4.4/x86_64-w64-mingw32/extrafontdb/1.0/a861555ddec7451c653b40e713166c6f/extrafontdb/fontmap/fonttable.csv
 Writing Fontmap to C:/Users/Administrator/AppData/Local/R/cache/R/renv/cache/v5/windows/R-4.4/x86_64-w64-mingw32/extrafontdb/1.0/a861555ddec7451c653b40e713166c6f/extrafontdb/fontmap/Fontmap...
+
+***********************************************************************************************************************
+Registration
+***********************************************************************************************************************
+# Register Fonts For Device (Windows in my case)
+
+> loadfonts(device = "win")
+Registering font with R using windowsFonts(): Agency FB
+Registering font with R using windowsFonts(): Aharoni
+Registering font with R using windowsFonts(): Aldhabi
+Registering font with R using windowsFonts(): Algerian
+Registering font with R using windowsFonts(): Andalus
+Registering font with R using windowsFonts(): Arial Black
+Registering font with R using windowsFonts(): Arial
+Registering font with R using windowsFonts(): Arial Narrow
+Registering font with R using windowsFonts(): Arial Rounded MT Bold
+Registering font with R using windowsFonts(): Bahnschrift
+Registering font with R using windowsFonts(): Baskerville Old Face
+Registering font with R using windowsFonts(): Bauhaus 93
+Registering font with R using windowsFonts(): Bell MT
+Registering font with R using windowsFonts(): Berlin Sans FB
+Registering font with R using windowsFonts(): Berlin Sans FB Demi
+Registering font with R using windowsFonts(): Bernard MT Condensed
+Registering font with R using windowsFonts(): Blackadder ITC
+Registering font with R using windowsFonts(): Bodoni MT
+Registering font with R using windowsFonts(): Bodoni MT Black
+Registering font with R using windowsFonts(): Bodoni MT Condensed
+Registering font with R using windowsFonts(): Bodoni MT Poster Compressed
+Registering font with R using windowsFonts(): Book Antiqua
+Registering font with R using windowsFonts(): Bookman Old Style
+Registering font with R using windowsFonts(): Bookshelf Symbol 7
+Registering font with R using windowsFonts(): Bradley Hand ITC
+Registering font with R using windowsFonts(): Britannic Bold
+Registering font with R using windowsFonts(): Broadway
+Registering font with R using windowsFonts(): Brush Script MT
+Registering font with R using windowsFonts(): Calibri
+Registering font with R using windowsFonts(): Calibri Light
+Registering font with R using windowsFonts(): Californian FB
+Registering font with R using windowsFonts(): Calisto MT
+Registering font with R using windowsFonts(): Cambria
+Registering font with R using windowsFonts(): Candara
+Registering font with R using windowsFonts(): Candara Light
+Registering font with R using windowsFonts(): Cascadia Code
+Registering font with R using windowsFonts(): Cascadia Mono
+Registering font with R using windowsFonts(): Castellar
+Registering font with R using windowsFonts(): Centaur
+Registering font with R using windowsFonts(): Century
+Registering font with R using windowsFonts(): Century Gothic
+Registering font with R using windowsFonts(): Century Schoolbook
+Registering font with R using windowsFonts(): Chiller
+Registering font with R using windowsFonts(): Colonna MT
+Registering font with R using windowsFonts(): Comic Sans MS
+Registering font with R using windowsFonts(): Consolas
+Registering font with R using windowsFonts(): Constantia
+Registering font with R using windowsFonts(): Cooper Black
+Registering font with R using windowsFonts(): Copperplate Gothic Bold
+Registering font with R using windowsFonts(): Copperplate Gothic Light
+Registering font with R using windowsFonts(): Corbel
+Registering font with R using windowsFonts(): Corbel Light
+Registering font with R using windowsFonts(): Courier New
+Registering font with R using windowsFonts(): Curlz MT
+Registering font with R using windowsFonts(): David
+Registering font with R using windowsFonts(): Dubai
+Registering font with R using windowsFonts(): Dubai Light
+Registering font with R using windowsFonts(): Dubai Medium
+Registering font with R using windowsFonts(): Ebrima
+Registering font with R using windowsFonts(): Edwardian Script ITC
+Registering font with R using windowsFonts(): Elephant
+Registering font with R using windowsFonts(): Engravers MT
+Registering font with R using windowsFonts(): Eras Bold ITC
+Registering font with R using windowsFonts(): Eras Demi ITC
+Registering font with R using windowsFonts(): Eras Light ITC
+Registering font with R using windowsFonts(): Eras Medium ITC
+Registering font with R using windowsFonts(): Felix Titling
+Registering font with R using windowsFonts(): Footlight MT Light
+Registering font with R using windowsFonts(): Forte
+Registering font with R using windowsFonts(): Franklin Gothic Book
+Registering font with R using windowsFonts(): Franklin Gothic Demi
+Registering font with R using windowsFonts(): Franklin Gothic Demi Cond
+Registering font with R using windowsFonts(): Franklin Gothic Heavy
+Registering font with R using windowsFonts(): Franklin Gothic Medium
+Registering font with R using windowsFonts(): Franklin Gothic Medium Cond
+Registering font with R using windowsFonts(): FrankRuehl
+Registering font with R using windowsFonts(): Freestyle Script
+Registering font with R using windowsFonts(): French Script MT
+Registering font with R using windowsFonts(): Gabriola
+Registering font with R using windowsFonts(): Gadugi
+Registering font with R using windowsFonts(): Garamond
+Registering font with R using windowsFonts(): Georgia
+Registering font with R using windowsFonts(): Gigi
+Registering font with R using windowsFonts(): Gill Sans Ultra Bold
+Registering font with R using windowsFonts(): Gill Sans Ultra Bold Condensed
+Registering font with R using windowsFonts(): Gill Sans MT
+Registering font with R using windowsFonts(): Gill Sans MT Condensed
+Registering font with R using windowsFonts(): Gill Sans MT Ext Condensed Bold
+Registering font with R using windowsFonts(): Gisha
+Registering font with R using windowsFonts(): Gloucester MT Extra Condensed
+Registering font with R using windowsFonts(): Goudy Old Style
+Registering font with R using windowsFonts(): Goudy Stout
+Registering font with R using windowsFonts(): Haettenschweiler
+Registering font with R using windowsFonts(): Harlow Solid Italic
+Registering font with R using windowsFonts(): Harrington
+Registering font with R using windowsFonts(): High Tower Text
+Registering font with R using windowsFonts(): Impact
+Registering font with R using windowsFonts(): Imprint MT Shadow
+Registering font with R using windowsFonts(): Informal Roman
+Registering font with R using windowsFonts(): Ink Free
+Registering font with R using windowsFonts(): Javanese Text
+Registering font with R using windowsFonts(): Jokerman
+Registering font with R using windowsFonts(): Juice ITC
+Registering font with R using windowsFonts(): Kristen ITC
+Registering font with R using windowsFonts(): Kunstler Script
+Registering font with R using windowsFonts(): Wide Latin
+Registering font with R using windowsFonts(): Leelawadee
+Registering font with R using windowsFonts(): Leelawadee UI
+Registering font with R using windowsFonts(): Leelawadee UI Semilight
+Registering font with R using windowsFonts(): Levenim MT
+Registering font with R using windowsFonts(): Lucida Bright
+Registering font with R using windowsFonts(): Lucida Calligraphy
+Registering font with R using windowsFonts(): Lucida Console
+Registering font with R using windowsFonts(): Lucida Fax
+Registering font with R using windowsFonts(): Lucida Handwriting
+Registering font with R using windowsFonts(): Lucida Sans
+Registering font with R using windowsFonts(): Lucida Sans Typewriter
+Registering font with R using windowsFonts(): Lucida Sans Unicode
+Registering font with R using windowsFonts(): Magneto
+Registering font with R using windowsFonts(): Maiandra GD
+Registering font with R using windowsFonts(): Malgun Gothic
+Registering font with R using windowsFonts(): Malgun Gothic Semilight
+Registering font with R using windowsFonts(): Marlett
+Registering font with R using windowsFonts(): Matura MT Script Capitals
+Registering font with R using windowsFonts(): Microsoft Himalaya
+Registering font with R using windowsFonts(): Microsoft Yi Baiti
+Registering font with R using windowsFonts(): Microsoft New Tai Lue
+Registering font with R using windowsFonts(): Microsoft PhagsPa
+Registering font with R using windowsFonts(): Microsoft Sans Serif
+Registering font with R using windowsFonts(): Microsoft Tai Le
+Registering font with R using windowsFonts(): Microsoft Uighur
+Registering font with R using windowsFonts(): Miriam
+Registering font with R using windowsFonts(): Miriam Fixed
+Registering font with R using windowsFonts(): Mistral
+Registering font with R using windowsFonts(): Modern No. 20
+Registering font with R using windowsFonts(): Mongolian Baiti
+Registering font with R using windowsFonts(): Monotype Corsiva
+Registering font with R using windowsFonts(): MS Outlook
+Registering font with R using windowsFonts(): MS Reference Sans Serif
+Registering font with R using windowsFonts(): MS Reference Specialty
+Registering font with R using windowsFonts(): MT Extra
+Registering font with R using windowsFonts(): MV Boli
+Registering font with R using windowsFonts(): Myanmar Text
+Registering font with R using windowsFonts(): Narkisim
+Registering font with R using windowsFonts(): Niagara Engraved
+Registering font with R using windowsFonts(): Niagara Solid
+Registering font with R using windowsFonts(): Nirmala UI
+Registering font with R using windowsFonts(): Nirmala UI Semilight
+Registering font with R using windowsFonts(): Nyala
+Registering font with R using windowsFonts(): OCR A Extended
+Registering font with R using windowsFonts(): Old English Text MT
+Registering font with R using windowsFonts(): Onyx
+Registering font with R using windowsFonts(): Palace Script MT
+Registering font with R using windowsFonts(): Palatino Linotype
+Registering font with R using windowsFonts(): Papyrus
+Registering font with R using windowsFonts(): Parchment
+Registering font with R using windowsFonts(): Perpetua
+Registering font with R using windowsFonts(): Perpetua Titling MT
+Registering font with R using windowsFonts(): Playbill
+Registering font with R using windowsFonts(): Poor Richard
+Registering font with R using windowsFonts(): Pristina
+Registering font with R using windowsFonts(): Rage Italic
+Registering font with R using windowsFonts(): Ravie
+Registering font with R using windowsFonts(): Rockwell
+Registering font with R using windowsFonts(): Rockwell Condensed
+Registering font with R using windowsFonts(): Rockwell Extra Bold
+Registering font with R using windowsFonts(): Rod
+Registering font with R using windowsFonts(): Sakkal Majalla
+Registering font with R using windowsFonts(): Script MT Bold
+Registering font with R using windowsFonts(): Segoe MDL2 Assets
+Registering font with R using windowsFonts(): Segoe Print
+Registering font with R using windowsFonts(): Segoe Script
+Registering font with R using windowsFonts(): Segoe UI
+Registering font with R using windowsFonts(): Segoe UI Light
+Registering font with R using windowsFonts(): Segoe UI Semibold
+Registering font with R using windowsFonts(): Segoe UI Semilight
+Registering font with R using windowsFonts(): Segoe UI Black
+Registering font with R using windowsFonts(): Segoe UI Emoji
+Registering font with R using windowsFonts(): Segoe UI Historic
+Registering font with R using windowsFonts(): Segoe UI Symbol
+Registering font with R using windowsFonts(): Showcard Gothic
+Registering font with R using windowsFonts(): Simplified Arabic
+Registering font with R using windowsFonts(): Simplified Arabic Fixed
+Registering font with R using windowsFonts(): SimSun-ExtB
+Registering font with R using windowsFonts(): Sitka Text
+Registering font with R using windowsFonts(): Snap ITC
+Registering font with R using windowsFonts(): Stencil
+Registering font with R using windowsFonts(): Sylfaen
+Registering font with R using windowsFonts(): Symbol
+Registering font with R using windowsFonts(): Tahoma
+Registering font with R using windowsFonts(): Tempus Sans ITC
+Registering font with R using windowsFonts(): Times New Roman
+Registering font with R using windowsFonts(): Traditional Arabic
+Registering font with R using windowsFonts(): Trebuchet MS
+Registering font with R using windowsFonts(): Tw Cen MT
+Registering font with R using windowsFonts(): Tw Cen MT Condensed
+Registering font with R using windowsFonts(): Tw Cen MT Condensed Extra Bold
+Registering font with R using windowsFonts(): Ubuntu Mono
+Registering font with R using windowsFonts(): Urdu Typesetting
+Registering font with R using windowsFonts(): Verdana
+Registering font with R using windowsFonts(): Viner Hand ITC
+Registering font with R using windowsFonts(): Vivaldi
+Registering font with R using windowsFonts(): Vladimir Script
+Registering font with R using windowsFonts(): Webdings
+Registering font with R using windowsFonts(): Wingdings
+Registering font with R using windowsFonts(): Wingdings 2
+Registering font with R using windowsFonts(): Wingdings 3
+
+***********************************************************************************************************************
+Now you will be able to specify the fonts on the corresponding argument of the graphical function you are going to use with the name appearing on the fonts() list that corresponds to the font you want to set.
+***********************************************************************************************************************
+
+
+
+# Specify the font family with the name displayed on the fonts() output
+plot(trees$Volume,
+     main = "Custom fonts in base R",
+     xlab = "",
+     ylab = "Volume",
+     pch = 21, col = 4, bg = 4,
+     family = "Algerian") # We are setting the "Algerian" font
+Add Windows fonts with extrafont package in R
+
+
+The same will apply for a ggplot2 chart:
+
+# install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(trees, aes(1:length(Volume), Volume)) +
+      ggtitle("Custom fonts in ggplot2") +
+      geom_point(col = 4) + 
+      xlab("") +
+      theme(text = element_text(family = "Algerian")) # Custom font
+Use custom fonts in R ggplot2
+
+# For charts that don't have an explicit option you have to work with the layouts
+# Save the current graphical parameters
+op <- par(no.readonly = TRUE)
+
+# Set the font globally
+par(family = "Algerian") # Specify the name of the font
+
+# Create the histogram
+hist(trees$Height,
+     main = "All Fonts",
+     ylab = "Frequency",
+     xlab = "",
+     col = 4)
+
+# Restore the graphical parameters
+on.exit(par(op))
+# dev.off()
+
+********** bonus   ********************
+# Adding a Google Font
+Google Fonts can be added with the font_add_google function of the package. For instance, if you want to add the Pacifico font you can type:
+
+Load Pacifico font from Google Fonts
+# install.packages("showtext")
+library(showtext)
+
+# You will need to have internet connection
+# If you restart R you will need to execute this code again to use the font
+font_add_google(name = "Pacifico",   # Name of the font on the Google Fonts site
+                family = "pacifico") # Name you want to use to call the font
+
+
+
+
+
