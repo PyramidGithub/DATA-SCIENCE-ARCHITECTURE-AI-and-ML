@@ -1,0 +1,25 @@
+## H2O
+
+H2O is an in-memory platform for distributed, scalable machine learning. H2O uses familiar interfaces like R, Python, Scala, Java, JSON and the Flow notebook/web interface, and works seamlessly with big data technologies like Hadoop and Spark. H2O provides implementations of many popular algorithms such as Generalized Linear Models (GLM), Gradient Boosting Machines (including XGBoost), Random Forests, Deep Neural Networks, Stacked Ensembles, Naive Bayes, Generalized Additive Models (GAM), Cox Proportional Hazards, K-Means, PCA, Word2Vec, as well as a fully automatic machine learning algorithm (H2O AutoML).
+H2O is extensible so that developers can add data transformations and custom algorithms of their choice and access them through all of those clients. H2O models can be downloaded and loaded into H2O memory for scoring, or exported into POJO or MOJO format for extemely fast scoring in production. More information can be found in the H2O User Guide.
+H2O-3 (this repository) is the third incarnation of H2O, and the successor to H2O-2.
+
+### Local Install 
+1. Downloading H2O-3 If you are a Python or R user, the easiest way to install H2O is via PyPI or Anaconda (for Python) or CRAN (for R):
+
+## Python
+pip install h2o
+
+## R
+install.packages("h2o")
+For the latest stable, nightly, Hadoop (or Spark / Sparkling Water) releases, or the stand-alone H2O jar, please visit: https://h2o.ai/download
+
+More info on downloading & installing H2O is available in the H2O User Guide.
+
+### System Install 
+
+## Build 
+gh repo clone h2oai/h2o-3
+
+## Download 
+https://h2o.ai/platform/ai-cloud/make/h2o/
