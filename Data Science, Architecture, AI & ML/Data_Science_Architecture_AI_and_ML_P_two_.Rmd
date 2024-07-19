@@ -1,0 +1,833 @@
+---
+title: "DATA SCIENCE ARCHITECTURE AI and ML Part 2"
+output: 
+  rmdformats::downcute:
+    default_style: "dark"
+    downcute_theme: "chaos"
+    editor_options: 
+  markdown: 
+    wrap: 95
+---
+
+## **I. An Overview on Data Science, AI, & ML - Part 2** {#sec-code-style style="line-height: 1.2;"}
+
+<div>
+
+Part 2 Picks up where we left off performing a build model for the higgs data set using `tidymodels` *workflows, & implementing* ML models , while also exploring using ai for automated ML workflows, model design, evaluation & selection. Where in part I we stuck to the very simple Iris data set,in part 2 we get a bit more realistic.
+
+**Series Description**
+
+This series is an overview on aspects Data Science, AI, & ML presented in HTML format with code embedded within. Any audience could grasp understanding from this presentation, and is intended to be helpful for a variety of different purposes. Having said the above please note this implementation features a modern multi-lingual approach & to understand the ins and outs of coding particulars inherently requires expertise in that particular domain. Part 2 features R, Python, Julia, Java, Scala & SQL. In addition CPU, and parallel (CPU, GPU) computational architectures are implemented through wrappers to C, C++, & Cuda code. Their is a focus on opensource technologies, part 2 implements Plotly, Torch, h2o_ai, & Spark. Reproducible coding & data conventions have been implemented & the embedded code is well commented. Referencing is performed through html-links allowing for easy click & go sourcing. The series is available to all on Github, according to the platform licensing & conduct policies The data set for part 2 is the Atlas Higgs ML Data Set.
+
+</div>
+
+<div>
+
+### ATLAS measures Higgs boson mass with unprecedented precision
+
+21 July 2023 \| By [ATLAS Collaboration](https://atlas.cern/authors/atlas-collaboration)
+
+In the eleven years since its discovery, studies of the [Higgs boson](https://atlas.cern/Updates/Press-Statement/10-year-higgs) have become a central avenue for shedding light on the fundamental structure of the universe. Precise measurements of Higgs-boson properties are among the most powerful tools physicists have to put pressure on the Standard Model – and now, it’s the turn of the Higgs-boson mass. The mass of the Higgs boson (m~H~) is not predicted by the Standard Model, and must be determined experimentally; a precise assessment of its value is of paramount importance in particle physics.
+
+The ATLAS Collaboration presented its [measurement](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2023-036/) of the Higgs-boson mass. The Higgs particle decays to:
+
+-   Decays t into wo photons using the full LHC Run 2 data set (“H→γγ” or the diphoton channel),
+
+-   Plus a [new combination](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2023-037/) of this measurement with the 2022 measurement of the Higgs-boson mass in studies of the Higgs decays to four leptons (the “H→4l" channel).
+
+The new H→γγ result significantly improves upon the [previous ATLAS measurement](https://doi.org/10.1016/j.physletb.2018.07.050) in this channel, benefiting both from the full LHC Run-2 data set – **reducing the statistical uncertainty by a factor of two** – and from dramatic improvements to the calibration of the photon energy response – reducing the systematic uncertainties by nearly a factor of four.
+
+### **Sporting a new photon calibration**
+
+Key to this precise new H→γγ measurement was a revamped calibration of the photon energy response that, over the past few years, physicists worked to improve. **The photon energy calibration was optimized on detailed Monte Carlo simulations of the ATLAS sub-detectors using machine learning techniques**.
+
+### Data set from the ATLAS Higgs Boson Machine Learning Challenge 2014
+
+Cite as: ATLAS collaboration (2014). Data set from the ATLAS Higgs Boson Machine Learning Challenge 2014. CERN Open Data Portal. [DOI:[10.7483/OPENDATA.ATLAS.ZBP2.M5T8](DOI:%5B10.7483/OPENDATA.ATLAS.ZBP2.M5T8){.uri}](http://doi.org/10.7483/OPENDATA.ATLAS.ZBP2.M5T8)
+
+**Data set** [**Derived**](https://opendata.cern.ch/search?f=type:Dataset%2Bsubtype:Derived) Data science [**ATLAS**](https://opendata.cern.ch/search?f=experiment:ATLAS) [**CERN-LHC**](https://opendata.cern.ch/search?q=CERN-LHC)
+
+### Description {style="color:  lighhtblue;"}
+
+The data set has been built from official ATLAS full-detector simulation, with "Higgs to tautau" events mixed with different backgrounds. The simulator has two parts. In the first, random proton-proton collisions are simulated based on the knowledge that we have accumulated on particle physics. It reproduces the random microscopic explosions resulting from the proton-proton collisions. In the second part, the resulting particles are tracked through a virtual model of the detector. The process yields simulated events with properties that mimic the statistical properties of the real events with additional information on what has happened during the collision, before particles are measured in the detector.
+
+</div>
+
+I
+
+```{r setup_ , message=FALSE, warning=FALSE}
+
+# options
+options(warn = -1)
+auto.snapshot <- getOption("renv.config.auto.snapshot")
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+
+# Initial packages loaded 
+librarian::shelf(
+#DATA/PARSING/PIPING
+library(viridis), library(magrittr), library(dplyr,quietly = T), library(showtext),
+# HTML/RMARKDOWN 
+library(rmdformats), library(bookdown), library(bslib), library(knitr), library(RColorBrewer),
+library(hrbrthemes),
+#PARRALELL/GPU/SYSTEM
+library(parallelly), library(torch), library(benchmarkme), library(here),
+#SPARK/h2o/Sarkling_Water
+library(sparklyr), library(sparklyr.nested), library(sparktf), library(torch), library(arrow),
+library(sparklyr), library(rsparkling),library(h2o), library(h2otools),
+#VISUALS
+library(plotly), library(ggplo2), library(ggforce), library(ggpubr), library(GGally),
+#TEXT
+library(text),
+#PYTHON
+library(reticulate),
+#MODELING 
+library(neuralnet), library(usemodels), library(C50), library(dials), library(embed), 
+library(xgboost), library(Matrix),
+library(tidymodels,quietly = T), library(caret,quietly = T))
+
+PicPath = 'c:/Users/Administrator/Documents/R/NLP/udpipemodels/images_'
+
+thematic::thematic_rmd()
+thematic::thematic_on(bg = 'black' , fg = 'white', accent = 'lightgreen' )
+
+# Implementing Timing Features 
+
+knitr::opts_chunk$set(time_it = TRUE)
+knitr::knit_hooks$set(time_it = local({
+  now <- NULL
+  function(before, options) {
+    if (before) {
+      # record the current time before each chunk
+      now <<- Sys.time()
+    } 
+    else {
+      # calculate the time difference after a chunk
+      res <- difftime(Sys.time(), now, units = "secs")
+      # return a character string to show the time
+      paste("Time for this code chunk to run:", base::round(res,2), "seconds")
+    }
+  }
+ }))
+
+# Project
+here::dr_here()
+
+# System Architecture 
+benchmarkme::get_ram()
+benchmarkme::get_cpu()
+
+# FROM TORCH
+library(torch)
+
+cuda_device_count()
+ cuda_current_device()
+   cuda_is_available()
+     cuda_runtime_version()
+
+cuda_get_device_capability(device = cuda_current_device())
+```
+
+## Monte Carlo simulation
+
+Monte Carlo methods vary, but tend to follow a particular pattern:
+
+1.  Define a domain of possible inputs
+2.  Generate inputs randomly from a probability distribution over the domain
+3.  Perform a deterministic computation on the inputs
+4.  Aggregate the results
+
+Lets see how Monte Carlo simulation works we will develop a classic experiment: The 𝜋 number estimation.
+
+𝜋 is the mathematical constant, which is equal to 3.14159265…, defined as the ratio of a circle’s circumference to its diameter. It has been calculated in hundreds of different ways over the years. Today, with computational advances, a very useful way is through Monte Carlo Simulation.
+
+Consider a circle with radius 𝑟, which is fixed and known.
+
+![](https://bookdown.org/manuele_leonelli/SimBook/images/Circle-radio.png){width="300"}
+
+Imagine that this circle is circumscribed within a square, which therefore has side 2𝑟 (also equal to the diameter).
+
+![](https://bookdown.org/manuele_leonelli/SimBook/images/Circle-square.png){width="300"}
+
+What is the probability that if I choose a random point inside the square, it will also be inside the circle? If I choose any random point within the square, it can be inside the circle or just inside the square. A very simple way to compute this probability is the ratio between the area of the circle and the area of the square.
+
+![](images/clipboard-51834695.png){width="850"}
+
+ans that if I were to replicate the selection of a random point in the square a large number of times, I could count the proportion of points inside the circle, multiply it by four and that would give me an approximation of 𝜋.
+
+We will create a Monte Carlo experiment in R which implements the ideas above. We will carry out the experiment in 5 steps:
+
+1.  Generate 2 random numbers between -1 and 1 in total 100 times (𝑥 and 𝑦).
+2.  Calculate x2+y2𝑥2+𝑦2 (This is the circumference equation).
+    -   If the value is less than 1, the case will be inside the circle
+
+    -   If the value is greater than 1, the case will be outside the circle.
+3.  Calculate the proportion of points inside the circle and multiply it by four to approximate the 𝜋 value.
+4.  Repeat the experiment a thousand times, to get different approximations to 𝜋.
+5.  Calculate the average of the previous 1000 experiments to give a final value estimate.
+
+### Estimating 𝜋: step 1
+
+Generate two random numbers between -1 and 1, 100 times:
+
+```{r mc1}
+set.seed(2021)
+nPoints <- 100
+x <- runif(nPoints,-1,1)
+y <- runif(nPoints,-1,1)
+head(x)
+head(y)
+
+```
+
+Both `x` and `y` are vectors of length 100 storing numbers between -1 and 1.
+
+### Estimating 𝜋: step 2
+
+Calculate the circumference equation.
+
+-   If the value is less than 1, the case will be inside the circle
+-   If the value is greater than 1, the case will be outside the circle.
+
+```{r mc2}
+
+set.seed(2021)
+nPoints <- 100
+x <- runif(nPoints,-1,1)
+y <- runif(nPoints,-1,1)
+head(x)
+head(y)
+
+result <- ifelse(x^2 + y^2 <= 1, TRUE, FALSE)
+head(result)
+```
+
+The vector `result` has in i-th position `TRUE` if `x[i]^2 + y[i]^2 <= 1`, that is if the associated point is within the circle. We can see that out of the first six simulated points, only one is outside the circle.
+
+### Estimating 𝜋: step 3
+
+Calculate the proportion of points inside the circle and multiply it by four to approximate the 𝜋 value.So using our 100 simulated points, we came up with an approximation of 2.92 for the value of 𝜋. Of course this number depends on the random numbers that were generated. If we were to repeat it, we would get a different approximation.Estimating 𝜋: step 4
+
+Repeat the experiment a thousand times, to get different approximations to 𝜋.
+
+We could do this by coding a `for` cycle, but we will take advantage of some features already implemented in R. In order to do this however, we first need to define a function which repeats our estimation of 𝜋 given 100 random points.
+
+```{r mc3}
+
+set.seed(76)
+x <- runif(nPoints,-1,1)
+y <- runif(nPoints,-1,1)
+result <- ifelse(x^2 + y^2 <= 1, TRUE, FALSE)
+4*sum(result)/nPoints
+```
+
+So we can see that the function works since it gives us the same output as the code above.
+
+Now we can use the function `replicate` in R, to replicate the experiment 1000 times, or to put it differently, to compute the function `piVal` 1000 times. `replicate` takes two inputs:
+
+-   `n`: the number of times we want to replicate the experiment;
+
+-   `expr`: the function we want to be replicated
+
+Therefore the following code replicates the experiment
+
+We can see that the first entry of the vector `pis` is indeed `pis[1]` which is the same value we obtained running the function ourselves (in both cases we fixed the same seed).
+
+```{r mc4}
+piVal <- function(nPoints = 100){
+  x <- runif(nPoints,-1,1)
+  y <- runif(nPoints,-1,1)
+  result <- ifelse(x^2+y^2 <= 1, TRUE, FALSE)
+  4*sum(result)/nPoints
+}
+
+set.seed(19)
+piVal()
+
+set.seed(38)
+piVal()
+
+set.seed(57)
+N <- 1000
+pis <- replicate(N, piVal())
+head(pis)
+
+mean(pis)
+```
+
+### Estimating 𝜋: step 5
+
+Calculate the average of the previous 1000 experiments to give a final value estimate.
+
+The average gives us a good approximation of 𝜋.
+
+A box plot can give us a visualization of the results.
+
+```{r mc5}
+library(ggplot2)
+
+mean(pis)
+thematic::thematic_on(bg = 'black' , fg = 'lightgreen' , accent = 'white')
+
+# Change outlier, color, shape and size
+ggplot(as.data.frame(pis), aes(x = pis)) + 
+  geom_boxplot(outlier.colour = "pink", 
+               outlier.shape = 8,
+                outlier.size = 4)
+```
+
+The box plot importantly tells us two things:
+
+1.  if we were to take the average of the 1000 approximations of 𝜋 we would get a value close to the true value (look at the horizontal line within the box).
+
+2.  if we were to choose a value for 𝜋 based on a single simulation, then we could pick values between 2.48 and 3.6.
+
+    Could have we not taken a much larger number of points with a confidence interval?
+
+```{r mc6}
+set.seed(2021)
+piVal(1000*100)
+c(sort(pis)[25],sort(pis)[975])
+```
+
+We can apply this idea, but instead of many simulations, we'll build many models.
+
+CPU-powered machine learning tasks with XGBoost can literally take hours to run. That’s because creating highly accurate, state-of-the-art prediction results involves the creation of thousands of decision trees and the testing of large numbers of parameter combinations. Graphics processing units, or GPUs, with their massively parallel architecture consisting of thousands of small efficient cores, can launch thousands of parallel threads simultaneously to supercharge compute-intensive tasks.
+
+NVIDIA developed NVIDIA RAPIDS™—an open-source data analytics and machine learning acceleration platform—or executing end-to-end data science training pipelines completely in GPUs. It relies on NVIDIA CUDA® primitives for low-level compute optimization, but exposes that GPU parallelism and high memory bandwidth through user-friendly Python interfaces.
+
+-   XGBoost + RAPIDS
+-   For GPU Support build & compile Extreme Gradient Boosting
+-   GPU-Accelerated XGBoost
+-   GPU-Accelerated, End-to-End Data Pipelines with Spark + XGBoost
+
+<https://developer.nvidia.com/> <https://xgboost.readthedocs.io/en/latest/build.html> <https://anaconda.org/h2oai> <https://anaconda.org/h2oai/h2o4gpu-cuda10> conda install h2oai::h2o4gpu-cuda10
+
+Building with GPU support - Full functionality for use with cuda,R,Python,java/JVM, Conda, & spark will require building XGBOOST from the source & compiling in C++
+
+I am using a Nvidia Tesla Class GPU that was designed for inference workloads in hyper-scale data centers - Leveraging the the Turing micro-architecture, here are the specs.
+
+-   2,560 Cuda Cores / Shading Units & 160 texture mapping units
+-   320 Tensor Cores enable mixed-precision computing, dynamically adapting calculations to accelerate throughput
+-   8.1 TFLOPS of FP32 performance, 65 TFLOPS of FP16 performance, and 130 TFLOPS of Tensor performance
+-   Tensor Cores are on a broad array of AI and high-performance computing (HPC) tasks.
+-   4X speedups in training trillion-parameter generative AI models
+-   30X in inference performance
+-   Tc's accelerate all workload types for modern AI factories.
+-   16 GB GDDR6 memory with the Tesla T4, which are connected using a 256-bit memory
+-   Operating at a frequency of 585 MHz, which can be boosted up to 1590 MHz, memory is running at 1250 MHz (10 Gbps effective)
+-   40 ray tracing acceleration cores.
+
+![](images/TC.PNG){width="850"}
+
+## Torch ML {style="color: lightblue"}
+
+Torch is an [open-source](https://en.wikipedia.org/wiki/Open-source_software "Open-source software") [machine learning](https://en.wikipedia.org/wiki/Machine_learning "Machine learning") library, a [scientific computing](https://en.wikipedia.org/wiki/Scientific_computing "Scientific computing") framework, and a [scripting language](https://en.wikipedia.org/wiki/Scripting_language "Scripting language") based on [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language) "Lua (programming language)").[[3]](https://en.wikipedia.org/wiki/Torch_(machine_learning)#cite_note-nips-3) It provides [LuaJIT](https://en.wikipedia.org/wiki/LuaJIT "LuaJIT") interfaces to [deep learning](https://en.wikipedia.org/wiki/Deep_learning "Deep learning") algorithms implemented in [C](https://en.wikipedia.org/wiki/C_(programming_language) "C (programming language)"). It was created by the [Idiap Research Institute](https://en.wikipedia.org/wiki/IDIAP "IDIAP") at [EPFL](https://en.wikipedia.org/wiki/EPFL "EPFL"). Torch development moved in 2017 to [PyTorch](https://en.wikipedia.org/wiki/PyTorch "PyTorch"), a port of the library to [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python (programming language)"). The core package of Torch is torch. It provides a flexible N-dimensional array or Tensor, which supports basic routines for indexing, slicing, transposing, type-casting, resizing, sharing storage and cloning. This object is used by most other packages and thus forms the core object of the library. The Tensor also supports mathematical operations like max, min, sum, statistical distributions like [iniform](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous) "Uniform distribution (continuous)"), [normal](https://en.wikipedia.org/wiki/Normal_distribution "Normal distribution") and [multinomial](https://en.wikipedia.org/wiki/Multinomial_distribution "Multinomial distribution"), and [BLAS](https://en.wikipedia.org/wiki/BLAS "BLAS") operations like [dot product](https://en.wikipedia.org/wiki/Dot_product "Dot product"), [matrix–vector multiplication](https://en.wikipedia.org/wiki/Matrix%E2%80%93vector_multiplication "Matrix–vector multiplication"), [matrix–matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication "Matrix multiplication") and [matrix product](https://en.wikipedia.org/wiki/Matrix_product "Matrix product").
+
+Torch ML
+
+Torch is an open-source machine learning library, a scientific computing framework, and a scripting language based on Lua.[3] It provides LuaJIT interfaces to deep learning algorithms implemented in C. It was created by the Idiap Research Institute at EPFL. Torch development moved in 2017 to PyTorch, a port of the library to Python. The core package of Torch is torch. It provides a flexible N-dimensional array or Tensor, which supports basic routines for indexing, slicing, transposing, type-casting, resizing, sharing storage and cloning. This object is used by most other packages and thus forms the core object of the library. The Tensor also supports mathematical operations like max, min, sum, statistical distributions like iniform, normal and multinomial, and BLAS operations like dot product, matrix–vector multiplication, matrix–matrix multiplication and matrix product.
+
+```{r GPU_Functinality}
+
+library(torch)
+
+cuda_device_count() 
+cuda_current_device() 
+cuda_is_available() 
+cuda_runtime_version()
+cuda_get_rng_state() 
+cuda_get_device_capability(device = cuda_current_device())
+
+```
+
+## What is going on underneath the hood? {style="color: lightblue"}
+
+Automatic Mixed Precision (AMP) is a technique that enables faster training of deep learning models while maintaining model accuracy by using a combination of single-precision (FP32) and half-precision (FP16) floating-point formats.
+
+We have seen single-precision (FP32) in the fields of life science and seismic for several years. In recent years, the big bang for machine learning and deep learning has focused significant attention on half-precision (FP16). Using reduced precision levels can accelerate data transfers rates,increase application performance, and reduce power consumption, especially on GPUs with [Tensor Core](https://developer.nvidia.com/tensor-cores) support for [mixed-precision](https://developer.nvidia.com/automatic-mixed-precision).
+
+ Mixed-precision training lowers the required resources by using lower-precision arithmetic, which has the following benefits.
+
+-   Decrease the required amount of memory. Half-precision floating point format (FP16) uses 16 bits, compared to 32 bits for single precision (FP32). Lowering the required memory enables training of larger models or training with larger minibatches.
+
+-   Shorten the training or inference time. Execution time can be sensitive to memory or arithmetic bandwidth. Half-precision halves the number of bytes accessed, thus reducing the time spent in memory-limited layers. NVIDIA GPUs offer up to 8x more half precision arithmetic throughput when compared to single-precision, thus speeding up math-limited layers.
+
+Modern [NVIDIA GPU's](https://developer.nvidia.com/automatic-mixed-precision) have improved support for AMP and torch can benefit of it with minimal code modifications.
+
+In torch, the AMP implementation involves 2 steps:
+
+1.  Allow the model to use different implementations of operations so it can use half-precision.
+2.  Using loss scaling to preserver small gradient values that might be too small due to using half-precision.
+
+The first step, can also be used to speedup inference pipelines. So let's implement some of the above & see what is what.
+
+## GPU Example {style="color: white;"}
+
+::: {style="color: white;"}
+We will define a model and some random training data to showcase how to enabled AMP with torch:
+:::
+
+```{r torch_model}
+library(torch)
+
+batch_size <- 512 # Try, for example, 128, 256, 513.
+in_size <- 4096
+out_size <- 4096
+num_layers <- 3
+num_batches <- 50
+epochs <- 3
+
+# Creates data in default precision.
+# The same data is used for both default and mixed precision trials below.
+# You don't need to manually change inputs' dtype when enabling mixed precision.
+
+data <- lapply(1:num_batches, function(x) torch_randn(batch_size,
+                                                      in_size, 
+                                                      device = "cuda"))
+
+targets <- lapply(1:num_batches, function(x) torch_randn(batch_size, 
+                                                         out_size, 
+                                                         device = "cuda"))
+
+```
+
+Now let's define the model:
+
+```{r  make_model}
+
+make_model <- function(in_size, out_size, num_layers) {
+  layers <- list()
+  for (i in seq_len(num_layers - 1)) {
+    layers <- c(layers, list(nn_linear(in_size, in_size), nn_relu()))
+  }
+  layers <- c(layers, list(nn_linear(in_size, out_size)))
+  nn_sequential(!!!layers)$cuda()
+}
+
+```
+
+To train the model without mixed precision we can do:
+
+```{r loss_fx}
+
+loss_fn <- nn_mse_loss()$cuda()
+net <- make_model(in_size, out_size, num_layers)
+opt <- optim_sgd(net$parameters, lr = 0.1)
+
+for (epoch in seq_len(epochs)) {
+  for (i in seq_along(data)) {
+    
+    output <- net(data[[i]])
+    loss <- loss_fn(output, targets[[i]])
+  
+    loss$backward()
+    opt$step()
+    opt$zero_grad()
+  }
+}
+
+```
+
+To enable step 1. of mixed precision, ie, allowing the model to run operations with half precision when possible, one simply run model computations (including the loss computation) inside a with_autocast context.
+
+```{r cpu_loss_fn}
+
+loss_fn <- nn_mse_loss()$cuda()
+net <- make_model(in_size, out_size, num_layers)
+opt <- optim_sgd(net$parameters, lr = 0.1)
+
+for (epoch in seq_len(epochs)) {
+  for (i in seq_along(data)) {
+    with_autocast(device_type = "cuda", {
+      output <- net(data[[i]])
+      loss <- loss_fn(output, targets[[i]])  
+    })
+    
+    loss$backward()
+    opt$step()
+    opt$zero_grad()
+  }
+}
+
+```
+
+To additionally enable gradient scaling we will now introduce the cuda_amp_grad_scaler() object and use it scale the loss before calling backward() and also use it to wrap calls to the optimizer, so it can 'unscale' the gradients before actually updating the weights. The training loop is now implemented as:
+
+```{r cuda_loss}
+
+loss_fn <- nn_mse_loss()$cuda()
+net <- make_model(in_size, out_size, num_layers)
+opt <- optim_sgd(net$parameters, lr = 0.1)
+scaler <- cuda_amp_grad_scaler()
+
+for (epoch in seq_len(epochs)) {
+  for (i in seq_along(data)) {
+    with_autocast(device_type = "cuda", {
+      output <- net(data[[i]])
+      loss <- loss_fn(output, targets[[i]])  
+    })
+    
+    scaler$scale(loss)$backward()
+    scaler$step(opt)
+    scaler$update()
+    opt$zero_grad()
+  }
+}
+
+```
+
+Benchmark
+
+We now write a simple function that allows us to quickly switch between feature so we can benchmark AMP:
+
+```{r bench_mark}
+
+run <- function(autocast, scale) {
+  loss_fn <- nn_mse_loss()$cuda()
+  net <- make_model(in_size, out_size, num_layers)
+  opt <- optim_sgd(net$parameters, lr = 0.1)
+  scaler <- cuda_amp_grad_scaler(enabled = scale)
+  
+  for (epoch in seq_len(epochs)) {
+    for (i in seq_along(data)) {
+      with_autocast(enabled = autocast, device_type = "cuda", {
+        output <- net(data[[i]])
+        loss <- loss_fn(output, targets[[i]])  
+      })
+      
+      scaler$scale(loss)$backward()
+      scaler$step(opt)
+      scaler$update()
+      opt$zero_grad()
+    }
+  }
+  loss$item()
+}
+
+cat( "\n CPU Time \n")
+system.time({run(autocast = FALSE, scale = FALSE)})
+
+cat( "\n GPU_1 Time \n")
+system.time({run(autocast = TRUE, scale = FALSE)})
+cat("\n ==> i.e. 1 is allowing the model to run operations with half precision when possible \n \n")
+
+cat( "\n GPU_Full Time \n")
+system.time({run(autocast = TRUE, scale = TRUE)})
+cat("\n ==> i.e. GPU_Full is to enable gradient scaling & wrap calls to the optimizer \n")
+```
+
+This is a very simplistic view, but we can see a 55% speedup going from CPU to GPU operations. Notice though when we use the GPU for gradient scaling & optimization not as much. This is due to the fact that their is some overhead with the setup. Normally the required operations would be much more significant than our chosen simplistic test case, & the required setup time would be minor in comparison. The point to illustrate here, is one must understand the process to make good use of the potential advantages.
+
+Let's return to our Iris data set with some additional EDA. Via an interactive Chart
+
+## NN Explanation Examples
+
+```{r EDA_3}
+
+library(plotly); library(GGally); library(ggplot2);library(plotly)
+
+# remove NAs
+
+iris_data <- na.omit(iris) 
+
+# create plot 
+
+P <- GGally::ggpairs(iris_data, 
+                     ggplot2::aes(color = Species, 
+                                  alpha = 0.75), 
+                     columns = 1:5, 
+                     progress = TRUE ) 
+ggplotly(P)
+
+
+
+```
+
+The innsight PACKAGE is an R package that interprets the behavior and explains individual predictions of modern neural networks. Innsight Implements several model-specific interpretability (feature attribution) methods based on neural networks in R, e.g.,The package provides a common interface for various methods for the interpretability of neural networks and can therefore be considered as an R analogue to iNNvestigate or Captum for Python. The following is a quick example.
+
+-   Layer-wise Relevance Propagation (LRP)
+-   Including propagation rules: ε-rule and α-β-rule
+-   Deep Learning Important Features (DeepLift)
+-   Including propagation rules for non-linearities: Rescale rule and Reveal Cancel rule
+-   DeepSHAP
+
+Gradient-based methods:
+
+-   Vanilla Gradient, including Gradient x Input
+-   Smoothed gradients (SmoothGrad), including SmoothGrad x Input
+-   Integrated gradients
+-   Expected gradients
+-   Connection Weights
+
+```{r INSIGHT_setup}
+
+library(innsight) ; library(torch); library(magrittr)  
+
+# Set seeds for reproducibility  
+set.seed(19) 
+torch_manual_seed(19) 
+
+# Prepare data  data(iris) 
+x <- torch_tensor(as.matrix(iris[, -5])) 
+
+# normalize input to [-1, 1]  
+x <- 2 * (x - x$min(1)[[1]]) / (x$max(1)[[1]] - x$min(1)[[1]]) - 1
+y <- torch_tensor(as.integer(iris[, 5]))  
+
+# Define model (torch::nn_sequential)  
+model <- nn_sequential( nn_linear(4, 30), 
+                        nn_relu(), 
+                        nn_dropout(0.3), 
+                        nn_linear(30, 10), 
+                        nn_relu(), 
+                        nn_linear(10, 3), 
+                        nn_softmax(dim = 2) 
+                      ) 
+
+# Train model 
+
+optimizer <- optim_adam(model$parameters, lr = 0.001) 
+
+for (t in 1:2500) { 
+  y_pred <- torch_log(model(x)) 
+  loss <- nnf_nll_loss(y_pred, y) }   
+if (t %% 250 == 0) {cat("Loss: ", as.numeric(loss), "\n") }  
+   optimizer$zero_grad() 
+   loss$backward()  
+   optimizer$step() 
+  
+```
+
+#### Basic Explanation
+
+```{r insight_1}
+
+
+
+# Create the converter object  
+
+converter <- convert(model, input_dim = c(4)) 
+
+# Create Converter object (with custom labels) 
+
+converter <- convert(model, 
+                       input_dim = c(4),
+                       input_names = c(
+                                       "Sepal(length)", 
+                                       "Sepal(width)",
+                                       "Petal(width)", 
+                                       "Petal(length)"
+                                       ),  
+                     
+                     
+                      output_names = c(
+                                       "Setosa" , 
+                                      "Versicolor", 
+                                      "Virginica"
+                                      ) 
+                     )  
+  
+  #> Skipping nn_dropout ...
+    
+  converter 
+```
+
+#### Additional Explanation
+
+```{r insight_2}
+
+grad_no_softmax <- run_grad(converter, x, ignore_last_act = TRUE)
+
+grad_softmax <- run_grad(converter, x, ignore_last_act = FALSE)
+
+lrp_eps <- run_lrp(converter, x, rule_name = "epsilon", rule_param = 0.01)
+
+x_ref <- x$mean(1, keepdim = TRUE) 
+
+# ref value needs the shape (1,4) 
+
+deeplift_mean <- run_deeplift(converter, x, x_ref = x_ref)
+
+deeplift_mean
+```
+
+#### Gradient Insight
+
+```{r insight_visual_1}
+
+# Show data point 1 and 111 for output node 1 (Setosa) and 2 (Versicolor)
+
+plot(grad_no_softmax, data_idx = c(1, 111), output_idx = c(1, 2)) + ggplot2::theme_bw()
+
+```
+
+#### Lift Interactive Chart
+
+```{r insight_visual_2}
+
+library(plotly) 
+
+# Show data point 1 for output node 1 (Setosa) and 2 (Versicolor) 
+
+plot(deeplift_mean, data_idx = 1, output_idx = c(1, 2), as_plotly = TRUE)
+
+```
+
+#### Gradient Interactive Chart
+
+```{r insight visual_3}
+
+# Summarized results for output node 1 (Setosa) and 2 (Versicolor) and
+#reference value of index 3
+
+boxplot(grad_no_softmax, output_idx = c(1, 2), ref_data_idx = 3, preprocess_FUN = abs) + ggplot2::theme_bw()
+
+```
+
+#### Data Points Interactive Chart
+
+```{r insight_visual_4}
+
+# Show boxplot for class setosa for output node 1 (Setosa) # and 2 (Versicolor)
+
+boxplot(lrp_eps, data_idx = 1:50, output_idx = c(1, 2), as_plotly = TRUE)
+
+```
+
+## Efficiency
+
+GPU'S are not the only way to achieve performance code. This example will highlight this point emphatically.
+
+-   First we will setup Julia in R Julia
+-   We are going to use the Mandelbrot algo to demonstrate with R & Julia
+-   Call the Algo in R & Time the call
+-   Call the Algo in Julia & time the call
+
+You will see below the results are the same in terms of end output, but the Julia code is 85X's more efficient.
+
+::: {style="color: white;"}
+### Julia Install for R {style="color: lightblue"}
+:::
+
+```{r Julia-Wrapper}
+# 
+# install.packages("JuliaCall") 
+# library(JuliaCall)
+# install_julia() 
+library(JuliaCall) 
+julia_setup(installJulia = TRUE)
+
+```
+
+```{r Manflebot_setup}
+
+# Algo to produce the Mandelbrot geometry
+
+iterate_max <- 1000L 
+
+centerx <- 0.37522 
+centery <- -0.22
+
+step <- 0.000002 
+size <- 125 
+
+xs <- seq(-step * size, step * size, step) +  centerx 
+ys <- seq(-step * size, step * size, step) + centery
+
+```
+
+```{r mandlebot_R}
+
+# R Mandlebrot Function 
+
+mandelbrot <- function(c, iterate_max = 500){ 
+  z <- 0i 
+  for (i in 1:iterate_max) { 
+    z <- z ^ 2 + c
+    if (abs(z) > 2.0) 
+    { return(i) } }
+  iterate_max }
+
+mandelbrotImage <- function(xs, ys, iterate_max = 500){ 
+  sapply(ys, function(y)
+  sapply(xs, function(x) mandelbrot(x + y * 1i, iterate_max = iterate_max))) /     iterate_max }
+
+system.time(zR <- mandelbrotImage(xs, ys, iterate_max))
+
+```
+
+::: {style="color: orange;"}
+Next we will write a wrapper for code in Julia & execute the same algorithm. You can see below the results are the same in terms of end output, the Julia code is 85X's more efficient.
+:::
+
+```{r Julia_MB}
+
+#Julia Mandlebrot Function 
+
+julia_command("
+function mandelbrot(c, iterate_max = 500)
+    z = 0.0im
+    for i in 1:iterate_max
+        z = z ^ 2 + c
+        if abs2(z) > 4.0
+            return(i)
+        end
+    end
+    iterate_max
+end  
+
+            ") 
+
+#> mandelbrot (generic function with 2 methods)
+
+julia_command(" 
+function mandelbrotImage(xs, ys, iterate_max = 500)
+    z = zeros(Float64, length(xs), length(ys))
+    for i in 1:length(xs)
+        for j in 1:length(ys)
+            z[i, j] = mandelbrot(xs[i] + ys[j] * im, iterate_max) / iterate_max
+        end
+    end
+    z
+end
+              ")
+
+#> mandelbrotImage (generic function with 2 methods)
+
+invisible(julia_call("mandelbrotImage", xs, ys, 2L))
+
+system.time(zJL <- julia_call("mandelbrotImage", xs, ys, iterate_max))
+
+```
+
+<div>
+
+Julia features optional typing, multiple dispatch, and good performance, achieved using type inference and just-in-time (JIT) compilation (and optional ahead-of-time compilation), implemented using LLVM. It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. To achieve this, Julia builds upon the lineage of mathematical programming languages, but also borrows much from popular dynamic languages, including Lisp, Perl, Python, Lua, and Ru
+
+</div>
+
+```{r mandelbot_comp}
+
+image(xs, ys, zR, col = topo.colors(19))
+
+image(xs, ys, zJL, col = topo.colors(19))
+
+```
+
+```{Julia   GPU}
+
+using CUDA
+CUDA.versioninfo()
+
+a = CUDA.rand(1024,1024,1024);
+
+CUDA.@profile sin.(a)
+
+CUDA.@profile trace=true sin.(a)
+```
+
+##### So you can see that Julia is pre-compiling its packages. {style="color: orange;"}
+
+![Computation Benchmarks](images/computation_benchmarks.PNG)

@@ -1,0 +1,256 @@
+07-14 02:56:21.351 127.0.0.1:54321       #1488        main  INFO water.default: ----- H2O started  -----
+07-14 02:56:21.352 127.0.0.1:54321       #1488        main  INFO water.default: Build git branch: rel-3.46.0
+07-14 02:56:21.352 127.0.0.1:54321       #1488        main  INFO water.default: Build git hash: e951137a01b24a224c182c5eacbad871e0184d4e
+07-14 02:56:21.353 127.0.0.1:54321       #1488        main  INFO water.default: Build git describe: jenkins-3.46.0.2-12-ge951137a01b
+07-14 02:56:21.353 127.0.0.1:54321       #1488        main  INFO water.default: Build project version: 3.46.0.3
+07-14 02:56:21.354 127.0.0.1:54321       #1488        main  INFO water.default: Build age: 1 month and 2 days
+07-14 02:56:21.354 127.0.0.1:54321       #1488        main  INFO water.default: Built by: 'jenkins'
+07-14 02:56:21.354 127.0.0.1:54321       #1488        main  INFO water.default: Built on: '2024-06-11 16:51:15'
+07-14 02:56:21.354 127.0.0.1:54321       #1488        main  INFO water.default: Found H2O Core extensions: [KrbStandalone, Infogram]
+07-14 02:56:21.355 127.0.0.1:54321       #1488        main  INFO water.default: Processed H2O arguments: [-name, PYRAMID_h20, -ip, 127.0.0.1, -web_ip, 127.0.0.1, -port, 54321, -ice_root, C:/Users/Administrator/Documents/R/R_Projects/ice, -nthreads, 36, -allow_unsupported_java]
+07-14 02:56:21.355 127.0.0.1:54321       #1488        main  INFO water.default: Java availableProcessors: 48
+07-14 02:56:21.355 127.0.0.1:54321       #1488        main  INFO water.default: Java heap totalMemory: 2.00 GB
+07-14 02:56:21.355 127.0.0.1:54321       #1488        main  INFO water.default: Java heap maxMemory: 29.97 GB
+07-14 02:56:21.356 127.0.0.1:54321       #1488        main  INFO water.default: Java version: Java 11.0.2 (from Oracle Corporation)
+07-14 02:56:21.356 127.0.0.1:54321       #1488        main  INFO water.default: JVM launch parameters: [-ea]
+07-14 02:56:21.356 127.0.0.1:54321       #1488        main  INFO water.default: JVM process id: 211488@C-Cluster
+07-14 02:56:21.356 127.0.0.1:54321       #1488        main  INFO water.default: OS version: Windows Server 2016 10.0 (amd64)
+07-14 02:56:21.356 127.0.0.1:54321       #1488        main  INFO water.default: Machine physical memory: 207.80 GB
+07-14 02:56:21.357 127.0.0.1:54321       #1488        main  INFO water.default: Machine locale: en_US
+07-14 02:56:21.357 127.0.0.1:54321       #1488        main  INFO water.default: X-h2o-cluster-id: 1720943779151
+07-14 02:56:21.357 127.0.0.1:54321       #1488        main  INFO water.default: User name: 'Administrator'
+07-14 02:56:21.357 127.0.0.1:54321       #1488        main  INFO water.default: IPv6 stack selected: false
+07-14 02:56:21.358 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: lo (Software Loopback Interface 1), 127.0.0.1
+07-14 02:56:21.358 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: lo (Software Loopback Interface 1), 0:0:0:0:0:0:0:1
+07-14 02:56:21.358 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net0 (Microsoft 6to4 Adapter)
+07-14 02:56:21.358 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan0 (Microsoft Wi-Fi Direct Virtual Adapter)
+07-14 02:56:21.358 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net1 (WAN Miniport (PPTP))
+07-14 02:56:21.359 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net2 (Microsoft IP-HTTPS Platform Adapter)
+07-14 02:56:21.359 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth0 (Hyper-V Virtual Switch Extension Adapter #3)
+07-14 02:56:21.359 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth1 (Microsoft Kernel Debug Network Adapter)
+07-14 02:56:21.359 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), 192.168.1.19
+07-14 02:56:21.360 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), 2605:a601:aaab:2f00:f416:b97:2fff:c57b
+07-14 02:56:21.360 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), fe80:0:0:0:800c:6283:a680:71d6%eth2
+07-14 02:56:21.360 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net3 (WAN Miniport (L2TP))
+07-14 02:56:21.361 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 192.168.1.199
+07-14 02:56:21.361 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f00:0:0:0:199
+07-14 02:56:21.361 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f00:ab5:1299:6aeb:a291
+07-14 02:56:21.361 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f01:59f8:5cb9:b0ae:5f13
+07-14 02:56:21.361 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), fd6f:95c3:85b4:1:bc8d:6e89:8dbe:218b
+07-14 02:56:21.362 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), fe80:0:0:0:fdf9:6f94:7720:d174%eth3
+07-14 02:56:21.362 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net4 (WAN Miniport (IKEv2))
+07-14 02:56:21.362 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), 192.168.1.39
+07-14 02:56:21.362 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), 2605:a601:aaab:2f00:b55e:644e:1ddb:827b
+07-14 02:56:21.362 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), fe80:0:0:0:b64c:4fdd:a1fa:70f4%eth4
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth5 (WAN Miniport (IPv6))
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net5 (Microsoft Teredo Tunneling Adapter)
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 192.168.1.99
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 2605:a601:aaab:2f00:e559:5e10:413a:364
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 2605:a601:aaab:2f01:eb05:b29e:99d4:c01d
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), fd6f:95c3:85b4:1:260f:444b:6e86:6959
+07-14 02:56:21.363 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), fe80:0:0:0:89a3:a5de:cdba:7e55%eth6
+07-14 02:56:21.364 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth7 (WAN Miniport (Network Monitor))
+07-14 02:56:21.364 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net6 (WAN Miniport (SSTP))
+07-14 02:56:21.364 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan1 (Microsoft Wi-Fi Direct Virtual Adapter #2)
+07-14 02:56:21.364 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth8 (WAN Miniport (IP))
+07-14 02:56:21.364 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net7 (WAN Miniport (GRE))
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth9 (Hyper-V Virtual Switch Extension Adapter #2)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan2 (TP-Link Wireless USB Adapter)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:ppp0 (WAN Miniport (PPPOE))
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth10 (Hyper-V Virtual Switch Extension Adapter #2-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth11 (Hyper-V Virtual Switch Extension Adapter #3-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth12 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth13 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.365 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth14 (Hyper-V Virtual Ethernet Adapter #2-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth15 (Hyper-V Virtual Ethernet Adapter #3-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth16 (Hyper-V Virtual Ethernet Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth17 (Hyper-V Virtual Ethernet Adapter #3-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth18 (Hyper-V Virtual Ethernet Adapter #2-QoS Packet Scheduler-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth19 (Hyper-V Virtual Ethernet Adapter #3-QoS Packet Scheduler-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth20 (Hyper-V Virtual Ethernet Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth21 (Hyper-V Virtual Ethernet Adapter #3-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.366 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan3 (TP-Link Wireless USB Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan4 (TP-Link Wireless USB Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan5 (TP-Link Wireless USB Adapter-Virtual WiFi Filter Driver-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:net8 (Microsoft IP-HTTPS Platform Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan6 (TP-Link Wireless USB Adapter-Native WiFi Filter Driver-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan7 (TP-Link Wireless USB Adapter-QoS Packet Scheduler-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan8 (TP-Link Wireless USB Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan9 (Microsoft Wi-Fi Direct Virtual Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan10 (Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.367 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan11 (Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan12 (Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan13 (Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth22 (WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth23 (WAN Miniport (IP)-QoS Packet Scheduler-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth24 (WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth25 (WAN Miniport (IPv6)-QoS Packet Scheduler-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth26 (WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth27 (WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000)
+07-14 02:56:21.368 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan14 (Microsoft Wi-Fi Direct Virtual Adapter #2-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan15 (Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan16 (Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan17 (Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:wlan18 (Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth28 (Hyper-V Virtual Switch Extension Adapter)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth29 (Hyper-V Virtual Switch Extension Adapter-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth30 (Hyper-V Virtual Ethernet Adapter), 192.168.2.1
+07-14 02:56:21.369 127.0.0.1:54321       #1488        main  INFO water.default: Possible IP Address: eth30 (Hyper-V Virtual Ethernet Adapter), fe80:0:0:0:c0ff:b5e8:dfbe:9e20%eth30
+07-14 02:56:21.370 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth31 (Hyper-V Virtual Ethernet Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 02:56:21.370 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth32 (Hyper-V Virtual Ethernet Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.370 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth33 (Hyper-V Virtual Ethernet Adapter-QoS Packet Scheduler-0000)
+07-14 02:56:21.370 127.0.0.1:54321       #1488        main  INFO water.default: Network interface is down: name:eth34 (Hyper-V Virtual Ethernet Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 02:56:21.370 127.0.0.1:54321       #1488        main  INFO water.default: H2O node running in unencrypted mode.
+07-14 02:56:21.372 127.0.0.1:54321       #1488        main  INFO water.default: Internal communication uses port: 54322
+07-14 02:56:21.372 127.0.0.1:54321       #1488        main  INFO water.default: Listening for HTTP and REST traffic on http://127.0.0.1:54321/
+07-14 02:56:21.748 127.0.0.1:54321       #1488        main  INFO water.default: H2O cloud name: 'PYRAMID_h20' on /127.0.0.1:54321, discovery address /225.212.181.23:57812
+07-14 02:56:21.751 127.0.0.1:54321       #1488        main  INFO water.default: If you have trouble connecting, try SSH tunneling from your local machine (e.g., via port 55555):
+07-14 02:56:21.751 127.0.0.1:54321       #1488        main  INFO water.default:   1. Open a terminal and run 'ssh -L 55555:localhost:54321 Administrator@127.0.0.1'
+07-14 02:56:21.752 127.0.0.1:54321       #1488        main  INFO water.default:   2. Point your browser to http://localhost:55555
+07-14 02:56:22.926 127.0.0.1:54321       #1488        main  WARN org.apache.hadoop.util.Shell: Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:600) ~[h2o.jar:?]
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:621) ~[h2o.jar:?]
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:644) ~[h2o.jar:?]
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:741) [h2o.jar:?]
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79) [h2o.jar:?]
+	at org.apache.hadoop.conf.Configuration.getStringCollection(Configuration.java:2268) [h2o.jar:?]
+	at water.persist.PersistHdfs.injectS3ASecurityCredentialProviders(PersistHdfs.java:94) [h2o.jar:?]
+	at water.persist.PersistHdfs.<clinit>(PersistHdfs.java:80) [h2o.jar:?]
+	at hex.security.KerberosExtension.onLocalNodeStarted(KerberosExtension.java:60) [h2o.jar:?]
+	at water.H2O.main(H2O.java:2446) [h2o.jar:?]
+	at water.H2OStarter.start(H2OStarter.java:22) [h2o.jar:?]
+	at water.H2OStarter.start(H2OStarter.java:51) [h2o.jar:?]
+	at water.H2OApp.main(H2OApp.java:12) [h2o.jar:?]
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:520) ~[h2o.jar:?]
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:491) ~[h2o.jar:?]
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:568) ~[h2o.jar:?]
+	... 9 more
+07-14 02:56:22.936 127.0.0.1:54321       #1488        main  INFO water.default: Kerberos not configured
+07-14 02:56:22.936 127.0.0.1:54321       #1488        main  INFO water.default: Log dir: 'C:\Users\Administrator\Documents\R\R_Projects\ice\h2ologs'
+07-14 02:56:22.936 127.0.0.1:54321       #1488        main  INFO water.default: Cur dir: 'C:\Users\Administrator\Documents\R\R_Projects'
+07-14 02:56:22.950 127.0.0.1:54321       #1488        main  INFO water.default: Subsystem for distributed import from HTTP/HTTPS successfully initialized
+07-14 02:56:22.950 127.0.0.1:54321       #1488        main  INFO water.default: HDFS subsystem successfully initialized
+07-14 02:56:22.954 127.0.0.1:54321       #1488        main  INFO water.default: S3 subsystem successfully initialized
+07-14 02:56:22.971 127.0.0.1:54321       #1488        main  INFO water.default: GCS subsystem successfully initialized
+07-14 02:56:22.971 127.0.0.1:54321       #1488        main  INFO water.default: Drive subsystem not available
+07-14 02:56:22.971 127.0.0.1:54321       #1488        main  INFO water.default: Flow dir: 'C:/Users/Administrator/h2oflows'
+07-14 02:56:23.356 127.0.0.1:54321       #1488        main  INFO water.default: Cloud of size 1 formed [/127.0.0.1:54321]
+07-14 02:56:23.368 127.0.0.1:54321       #1488        main  INFO water.default: Registered parsers: [GUESS, ARFF, XLS, SVMLight, AVRO, PARQUET, CSV]
+07-14 02:56:23.369 127.0.0.1:54321       #1488        main  INFO water.default: KrbStandalone extension initialized
+07-14 02:56:23.369 127.0.0.1:54321       #1488        main  INFO water.default: Infogram extension initialized
+07-14 02:56:23.369 127.0.0.1:54321       #1488        main  INFO water.default: Registered 2 core extensions in: 420ms
+07-14 02:56:23.369 127.0.0.1:54321       #1488        main  INFO water.default: Registered H2O core extensions: [KrbStandalone, Infogram]
+07-14 02:56:23.760 127.0.0.1:54321       #1488        main  INFO water.default: Registered: 277 REST APIs in: 391ms
+07-14 02:56:23.761 127.0.0.1:54321       #1488        main  INFO water.default: Registered REST API extensions: [Mojo 2 pipeline extensions, Amazon S3, Algos, Infogram, AutoML, Core V3, TargetEncoder, Core V4]
+07-14 02:56:23.922 127.0.0.1:54321       #1488        main  INFO water.default: Registered: 332 schemas in 160ms
+07-14 02:56:23.923 127.0.0.1:54321       #1488        main  INFO water.default: H2O started in 4764ms
+07-14 02:56:23.923 127.0.0.1:54321       #1488        main  INFO water.default: 
+07-14 02:56:23.923 127.0.0.1:54321       #1488        main  INFO water.default: Open H2O Flow in your web browser: http://127.0.0.1:54321
+07-14 02:56:23.923 127.0.0.1:54321       #1488        main  INFO water.default: 
+07-14 02:56:23.954 127.0.0.1:54321       #1488  1113940-44  INFO water.default: GET /, parms: {}
+07-14 02:56:24.163 127.0.0.1:54321       #1488  1113940-27  INFO water.default: GET /, parms: {}
+07-14 03:31:33.283 127.0.0.1:54321       #7944        main  INFO water.default: ----- H2O started  -----
+07-14 03:31:33.284 127.0.0.1:54321       #7944        main  INFO water.default: Build git branch: rel-3.46.0
+07-14 03:31:33.284 127.0.0.1:54321       #7944        main  INFO water.default: Build git hash: e951137a01b24a224c182c5eacbad871e0184d4e
+07-14 03:31:33.285 127.0.0.1:54321       #7944        main  INFO water.default: Build git describe: jenkins-3.46.0.2-12-ge951137a01b
+07-14 03:31:33.286 127.0.0.1:54321       #7944        main  INFO water.default: Build project version: 3.46.0.3
+07-14 03:31:33.286 127.0.0.1:54321       #7944        main  INFO water.default: Build age: 1 month and 2 days
+07-14 03:31:33.286 127.0.0.1:54321       #7944        main  INFO water.default: Built by: 'jenkins'
+07-14 03:31:33.287 127.0.0.1:54321       #7944        main  INFO water.default: Built on: '2024-06-11 16:51:15'
+07-14 03:31:33.287 127.0.0.1:54321       #7944        main  INFO water.default: Found H2O Core extensions: [KrbStandalone, Infogram]
+07-14 03:31:33.287 127.0.0.1:54321       #7944        main  INFO water.default: Processed H2O arguments: [-name, PYRAMID_h20, -ip, 127.0.0.1, -web_ip, 127.0.0.1, -port, 54321, -ice_root, C:/Users/Administrator/Documents/R/R_Projects/ice, -nthreads, 36, -allow_unsupported_java]
+07-14 03:31:33.287 127.0.0.1:54321       #7944        main  INFO water.default: Java availableProcessors: 48
+07-14 03:31:33.287 127.0.0.1:54321       #7944        main  INFO water.default: Java heap totalMemory: 2.00 GB
+07-14 03:31:33.288 127.0.0.1:54321       #7944        main  INFO water.default: Java heap maxMemory: 29.97 GB
+07-14 03:31:33.288 127.0.0.1:54321       #7944        main  INFO water.default: Java version: Java 11.0.2 (from Oracle Corporation)
+07-14 03:31:33.288 127.0.0.1:54321       #7944        main  INFO water.default: JVM launch parameters: [-ea]
+07-14 03:31:33.288 127.0.0.1:54321       #7944        main  INFO water.default: JVM process id: 127944@C-Cluster
+07-14 03:31:33.289 127.0.0.1:54321       #7944        main  INFO water.default: OS version: Windows Server 2016 10.0 (amd64)
+07-14 03:31:33.289 127.0.0.1:54321       #7944        main  INFO water.default: Machine physical memory: 207.80 GB
+07-14 03:31:33.289 127.0.0.1:54321       #7944        main  INFO water.default: Machine locale: en_US
+07-14 03:31:33.289 127.0.0.1:54321       #7944        main  INFO water.default: X-h2o-cluster-id: 1720945892000
+07-14 03:31:33.290 127.0.0.1:54321       #7944        main  INFO water.default: User name: 'Administrator'
+07-14 03:31:33.290 127.0.0.1:54321       #7944        main  INFO water.default: IPv6 stack selected: false
+07-14 03:31:33.290 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: lo (Software Loopback Interface 1), 127.0.0.1
+07-14 03:31:33.290 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: lo (Software Loopback Interface 1), 0:0:0:0:0:0:0:1
+07-14 03:31:33.291 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net0 (Microsoft 6to4 Adapter)
+07-14 03:31:33.291 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan0 (Microsoft Wi-Fi Direct Virtual Adapter)
+07-14 03:31:33.291 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net1 (WAN Miniport (PPTP))
+07-14 03:31:33.291 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net2 (Microsoft IP-HTTPS Platform Adapter)
+07-14 03:31:33.291 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth0 (Hyper-V Virtual Switch Extension Adapter #3)
+07-14 03:31:33.292 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth1 (Microsoft Kernel Debug Network Adapter)
+07-14 03:31:33.292 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), 192.168.1.19
+07-14 03:31:33.292 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), 2605:a601:aaab:2f00:f416:b97:2fff:c57b
+07-14 03:31:33.292 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth2 (Hyper-V Virtual Ethernet Adapter #2), fe80:0:0:0:800c:6283:a680:71d6%eth2
+07-14 03:31:33.293 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net3 (WAN Miniport (L2TP))
+07-14 03:31:33.293 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 192.168.1.199
+07-14 03:31:33.293 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f00:0:0:0:199
+07-14 03:31:33.293 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f00:ab5:1299:6aeb:a291
+07-14 03:31:33.293 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), 2605:a601:aaab:2f01:59f8:5cb9:b0ae:5f13
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), fd6f:95c3:85b4:1:bc8d:6e89:8dbe:218b
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth3 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter), fe80:0:0:0:fdf9:6f94:7720:d174%eth3
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net4 (WAN Miniport (IKEv2))
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), 192.168.1.39
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), 2605:a601:aaab:2f00:b55e:644e:1ddb:827b
+07-14 03:31:33.294 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth4 (Hyper-V Virtual Ethernet Adapter #3), fe80:0:0:0:b64c:4fdd:a1fa:70f4%eth4
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth5 (WAN Miniport (IPv6))
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net5 (Microsoft Teredo Tunneling Adapter)
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 192.168.1.99
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 2605:a601:aaab:2f00:e559:5e10:413a:364
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), 2605:a601:aaab:2f01:eb05:b29e:99d4:c01d
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), fd6f:95c3:85b4:1:260f:444b:6e86:6959
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth6 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2), fe80:0:0:0:89a3:a5de:cdba:7e55%eth6
+07-14 03:31:33.295 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth7 (WAN Miniport (Network Monitor))
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net6 (WAN Miniport (SSTP))
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan1 (Microsoft Wi-Fi Direct Virtual Adapter #2)
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth8 (WAN Miniport (IP))
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net7 (WAN Miniport (GRE))
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth9 (Hyper-V Virtual Switch Extension Adapter #2)
+07-14 03:31:33.296 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan2 (TP-Link Wireless USB Adapter)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:ppp0 (WAN Miniport (PPPOE))
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth10 (Hyper-V Virtual Switch Extension Adapter #2-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth11 (Hyper-V Virtual Switch Extension Adapter #3-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth12 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth13 (Mellanox ConnectX-4 Lx 10/25GbE 2-port OCP Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth14 (Hyper-V Virtual Ethernet Adapter #2-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.297 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth15 (Hyper-V Virtual Ethernet Adapter #3-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth16 (Hyper-V Virtual Ethernet Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth17 (Hyper-V Virtual Ethernet Adapter #3-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth18 (Hyper-V Virtual Ethernet Adapter #2-QoS Packet Scheduler-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth19 (Hyper-V Virtual Ethernet Adapter #3-QoS Packet Scheduler-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth20 (Hyper-V Virtual Ethernet Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth21 (Hyper-V Virtual Ethernet Adapter #3-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.298 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan3 (TP-Link Wireless USB Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan4 (TP-Link Wireless USB Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan5 (TP-Link Wireless USB Adapter-Virtual WiFi Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:net8 (Microsoft IP-HTTPS Platform Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan6 (TP-Link Wireless USB Adapter-Native WiFi Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan7 (TP-Link Wireless USB Adapter-QoS Packet Scheduler-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan8 (TP-Link Wireless USB Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan9 (Microsoft Wi-Fi Direct Virtual Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan10 (Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan11 (Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000)
+07-14 03:31:33.299 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan12 (Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan13 (Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth22 (WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth23 (WAN Miniport (IP)-QoS Packet Scheduler-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth24 (WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth25 (WAN Miniport (IPv6)-QoS Packet Scheduler-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth26 (WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth27 (WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan14 (Microsoft Wi-Fi Direct Virtual Adapter #2-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan15 (Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.300 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan16 (Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000)
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan17 (Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000)
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:wlan18 (Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth28 (Hyper-V Virtual Switch Extension Adapter)
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth29 (Hyper-V Virtual Switch Extension Adapter-Hyper-V Virtual Switch Extension Filter-0000)
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth30 (Hyper-V Virtual Ethernet Adapter), 192.168.2.1
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Possible IP Address: eth30 (Hyper-V Virtual Ethernet Adapter), fe80:0:0:0:c0ff:b5e8:dfbe:9e20%eth30
+07-14 03:31:33.301 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth31 (Hyper-V Virtual Ethernet Adapter-Netmon Lightweight Filter Driver-0000)
+07-14 03:31:33.302 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth32 (Hyper-V Virtual Ethernet Adapter-WFP Native MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.302 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth33 (Hyper-V Virtual Ethernet Adapter-QoS Packet Scheduler-0000)
+07-14 03:31:33.302 127.0.0.1:54321       #7944        main  INFO water.default: Network interface is down: name:eth34 (Hyper-V Virtual Ethernet Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000)
+07-14 03:31:33.302 127.0.0.1:54321       #7944        main FATAL water.default: On /127.0.0.1 some of the required ports 54321, 54322 are not available, change -port PORT and try again.
