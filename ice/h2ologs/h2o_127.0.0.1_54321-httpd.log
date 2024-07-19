@@ -1,0 +1,4 @@
+2024-07-14T02:56:23,957 127.0.0.1:54321       #1488  1113940-44  INFO water.api.RequestServer:   GET     301    3018 ms  /
+2024-07-14T02:56:24,119 127.0.0.1:54321       #1488  1113940-32  INFO water.api.RequestServer:   GET     200     147 ms  /3/Cloud
+2024-07-14T02:56:24,164 127.0.0.1:54321       #1488  1113940-27  INFO water.api.RequestServer:   GET     301       1 ms  /
+2024-07-14T02:56:24,175 127.0.0.1:54321       #1488  1113940-33  INFO water.api.RequestServer:   GET     200       2 ms  /3/Cloud
