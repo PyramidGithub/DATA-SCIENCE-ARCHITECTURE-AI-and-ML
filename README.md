@@ -1,4 +1,4 @@
-# The DATA SCIENCE, Achitecture, AI AND ML Series
+## The DATA SCIENCE, Achitecture, AI AND ML Series
 
 ## The Series is usefull for exploration, research, code search, & for those trying to get some extra learning on thier own. Available in HTML OR R markdown documents, which is  a simple and easy to use plain text language doc that combines code, data, results from data operations (including plots and tables, pipelines, SP’s, inputs & outputs) with commentary all combined into a single nicely formatted and reproducible document. The series will be self contained in an RENV environment with Well Known & FAIR data sets, & citation can be sourced via hyperlinks. There are 3 angles of perspectives moving from the micro to macro, here is a quick summary.
 
